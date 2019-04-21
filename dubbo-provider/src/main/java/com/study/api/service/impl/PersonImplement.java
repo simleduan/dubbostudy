@@ -10,18 +10,11 @@ import java.util.List;
 
 @Component
 @Service
-public class PersonImplement implements PersonService,InitializingBean {
+public class PersonImplement implements PersonService {
     @Override
     public List<Person> getAllPerson() {
         List<Person> list = getAllPersonImpl();
         return list;
-    }
-
-    @Override
-    public String sayHello(String name) {
-        System.out.println("[" + new SimpleDateFormat("HH:mm:ss").format(new Date()) + "] Hello " + name
-                + ", request from consumer: " + RpcContext.getContext().getRemoteAddress());
-        return "Hello " + name + ", response form provider: " + RpcContext.getContext().getLocalAddress();
     }
 
     public List<Person> getAllPersonImpl(){
@@ -33,8 +26,4 @@ public class PersonImplement implements PersonService,InitializingBean {
         return list;
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("***********************************");
-    }
 }

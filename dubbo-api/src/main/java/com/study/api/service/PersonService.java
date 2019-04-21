@@ -11,5 +11,4 @@ public interface PersonService {
 
    List<Person> getAllPerson();
 
-   String sayHello(String name);
 }

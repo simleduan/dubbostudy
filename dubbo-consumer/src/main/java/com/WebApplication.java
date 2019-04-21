@@ -7,8 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-//@ComponentScan({"com.study.api.service","com.study.config"})
-@ComponentScan("com.study")
+@ComponentScan({"com.study.api.service","com.study.config"})
 @ImportAutoConfiguration(ConsumerConfiguration.class)
 public class WebApplication {
 
