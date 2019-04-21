@@ -22,4 +22,9 @@ public class PersonController {
         List<Person> allPerson = personService.getAllPerson();
         return allPerson;
     }
+
+    @RequestMapping("/aaaa")
+    public String test(){
+        return "test aa";
+    }
 }

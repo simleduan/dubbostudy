@@ -1,6 +1,8 @@
 package com;
 
+import com.study.config.ProviderConfiguration;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,7 +16,8 @@ import java.util.Properties;
  */
 @SpringBootApplication
 @EnableTransactionManagement
-@ImportResource("classpath:provider.xml")
+@ComponentScan("com.study.api.service.impl")
+@ImportAutoConfiguration(ProviderConfiguration.class)
 public class ProviderApplication {
 
   public static void main(String[] args) throws InterruptedException {

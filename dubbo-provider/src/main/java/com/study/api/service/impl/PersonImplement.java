@@ -1,11 +1,19 @@
 package com.study.api.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
+import com.alibaba.dubbo.rpc.RpcContext;
 import com.study.api.model.Person;
 import com.study.api.service.PersonService;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+@Component
+@Service
 public class PersonImplement implements PersonService {
     @Override
     public List<Person> getAllPerson() {
